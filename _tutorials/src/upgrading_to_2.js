@@ -1,26 +1,26 @@
 /**
-  A number of things have changed with the release of jasmine 2.0
+  Ряд вещей изменились с выпуском жасмина 2.0
   */
 
 describe("Upgrading to jasmine 2.0", function() {
   /**
-    ## Custom Matchers
+    ## Пользовательские матчи
     */
   describe("Custom Matchers", function() {
     beforeEach(function() {
       /**
-        The `addMatchers` function is no longer on the spec (`this`) it is now on the global `jasmine` object.
+        Функция 'addMatchers' больше не на спецификации ('это') теперь находится на глобальном объекте «жасмина».
         */
 
-      /* was:
+      /* Был:
          this.addMatchers({
       */
       jasmine.addMatchers({
         /**
-          A matcher is set up a bit different now.
-          The factory receives a `util` object which contains things like jasmines equality functions, and any registered `customEqualityTesters`.
-          The factory is expected to return an object with a `compare` function which will be called with the `actual` and `expected` directly,
-          instead of the actual value being on `this`
+          Теперь матчер настроен немного по-другому.
+          Фабрика получает объект «утилизатора», который содержит такие вещи, как функции равенства жасмина, и любые зарегистрированные «таможенные тесты».
+          Ожидается, что фабрика вернет объект с функцией «сравнить», которая будет называться «фактическим» и «ожидаемым» напрямую,
+          вместо фактического значения, находясь на "это"
           */
 
         /* was:
@@ -66,11 +66,11 @@ describe("Upgrading to jasmine 2.0", function() {
   });
 
   /**
-    ## Asynchronous Specs
+    ## Асинхронные спекуляции
     */
   describe("Asynchronous Specs", function() {
     /**
-     * We'll pretend this is asynchronous for our tests below
+     * Мы притворимся, что это асинхронное для наших тестов ниже
      */
     var asyncSetThing,
     somethingAsyncWithCallback = function(callback) {
